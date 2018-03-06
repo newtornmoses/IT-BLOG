@@ -1,0 +1,33 @@
+<div class="container HomePosts">
+    {{> success}}
+    <h2 class="text-center  well">ALL ARTICLES</h2>
+ 
+    <section class="col-md-12 items">
+       
+        {{#if admin}}
+        <h4 class="text-center" style="color:white"> You have Administrator Rights</h4>
+        {{/if}}
+        <div class="allposts">
+ 
+            {{#if items}} {{#each items}}
+
+            <a href="/api/blog/{{this._id}}">
+
+                <div class="col-md-12 article">
+
+                    <h1 class="text-center">{{this.title}}</h1>
+                    <img src="{{this.image}}" class="allImages img-responsive" alt="">
+
+                    <h5 class="text-center">{{this.description}}</h5>
+            </a>
+            <a href="/api/blog/{{this._id}}" id="button" class="btn btn-success readmore">read More</a>
+          
+
+            </div>
+            {{/each}}
+
+            {{/if}}
+        </div>
+    </section>
+</div>
+{{> scripts}}

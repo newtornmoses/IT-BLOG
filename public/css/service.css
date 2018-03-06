@@ -1,0 +1,45 @@
+.nav {
+    background: rgb(255, 251, 251);
+    background: rgba(167, 167, 167, 0.445);
+    padding: 10px;
+    height: 70px;
+    margin-bottom: -19px;
+    border-bottom: 1px solid white;
+}
+
+.nav a {
+    background: rgba(0, 255, 249, 0.6);
+    background: rgba(31, 82, 81, 0.151);
+    border: none;
+    color: white;
+    margin-left: 2px
+}
+
+.brand {
+    background: rgb(41, 34, 34);
+    height: 200px;
+}
+
+.brand h1 {
+    color: white;
+    text-align: center;
+    font-size: 89px;
+}
+
+.brand h4 {
+    color: white;
+    text-align: center;
+}
+
+.loginStatus {}
+
+.loginStatus a {
+    /* position: relative;
+    left: 90%; */
+    min-height: 50px;
+    min-width: 20%;
+    background: grey;
+    color: white;
+    border: grey;
+    margin-left: 65%;
+}

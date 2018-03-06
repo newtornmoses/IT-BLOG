@@ -1,0 +1,606 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    box-sizing: border-box;
+}
+
+.blog h1 {
+    font-size: 29px;
+    color: rgb(211, 211, 211);
+    background: rgb(24, 24, 24);
+    margin-bottom: 0px;
+    padding: 10px;
+}
+
+.blog h5 {
+    background: #0ca195;
+    color: white;
+    padding: 10px;
+}
+
+.blog img {
+    width: 100%;
+}
+
+.blog p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 30px;
+    text-align: justify;
+}
+
+.badge {
+    height: 30px;
+    padding: 10px;
+    background: orange
+}
+
+.comments {
+    background: rgba(22, 22, 22, 0.418);
+    margin-bottom: 80px;
+}
+
+button.like {
+    border-radius: 80px;
+    height: 100px;
+    width: 100px;
+    border: none;
+    background: rgba(75, 75, 100, 0.603);
+    position: relative;
+    left: 45%;
+    box-shadow: 1px 2px 4px rgb(212, 212, 212);
+    animation: like 2s ease-in-out infinite;
+}
+
+@keyframes like {
+    0% {
+        box-shadow: 1px 2px 8px rgb(235, 211, 66);
+    }
+    20% {
+        box-shadow: 1px 2px 4px rgb(11, 255, 11);
+    }
+    40% {
+        box-shadow: 1px 2px 9px rgb(9, 54, 250);
+    }
+    60% {
+        box-shadow: 1px 2px 4px rgb(235, 66, 184);
+    }
+    80% {
+        box-shadow: 1px 2px 20px rgb(66, 83, 235);
+    }
+    100% {
+        box-shadow: 1px 2px 8px rgb(235, 66, 66);
+    }
+}
+
+@-moz-keyframes like {
+    0% {
+        box-shadow: 1px 2px 8px rgb(235, 211, 66);
+    }
+    20% {
+        box-shadow: 1px 2px 4px rgb(11, 255, 11);
+    }
+    40% {
+        box-shadow: 1px 2px 9px rgb(9, 54, 250);
+    }
+    60% {
+        box-shadow: 1px 2px 4px rgb(235, 66, 184);
+    }
+    80% {
+        box-shadow: 1px 2px 20px rgb(66, 83, 235);
+    }
+    100% {
+        box-shadow: 1px 2px 8px rgb(235, 66, 66);
+    }
+}
+
+@-webkit-keyframes like {
+    0% {
+        box-shadow: 1px 2px 8px rgb(235, 211, 66);
+    }
+    20% {
+        box-shadow: 1px 2px 4px rgb(11, 255, 11);
+    }
+    40% {
+        box-shadow: 1px 2px 9px rgb(9, 54, 250);
+    }
+    60% {
+        box-shadow: 1px 2px 4px rgb(235, 66, 184);
+    }
+    80% {
+        box-shadow: 1px 2px 20px rgb(66, 83, 235);
+    }
+    100% {
+        box-shadow: 1px 2px 8px rgb(235, 66, 66);
+    }
+}
+
+@-o-keyframes like {
+    0% {
+        box-shadow: 1px 2px 8px rgb(235, 211, 66);
+    }
+    20% {
+        box-shadow: 1px 2px 4px rgb(11, 255, 11);
+    }
+    40% {
+        box-shadow: 1px 2px 9px rgb(9, 54, 250);
+    }
+    60% {
+        box-shadow: 1px 2px 4px rgb(235, 66, 184);
+    }
+    80% {
+        box-shadow: 1px 2px 20px rgb(66, 83, 235);
+    }
+    100% {
+        box-shadow: 1px 2px 8px rgb(235, 66, 66);
+    }
+}
+
+button.like i {
+    font-size: 60px;
+    background: orange;
+    border-radius: 40px;
+    height: 80px;
+    width: 80px;
+}
+
+button.like:hover {
+    background: rgb(236, 236, 236);
+}
+
+.likeform {
+    width: 100%;
+    color: white;
+    height: 200px;
+    background: rgb(6, 87, 107);
+}
+
+.comment {
+    background: #80808007;
+}
+
+textarea.form-control.comment {
+    height: 50px;
+    margin-top: 50px;
+}
+
+.btn.btn-success.btnreply {
+    margin-left: -60px;
+    margin-top: 3px;
+    border-radius: 0px 50px 90px 0px;
+}
+
+.form-control.replyText {
+    height: 40px;
+    width: 400px;
+}
+
+.userNames {
+    display: -webkit-inline-box;
+    width: 800px;
+    overflow-x: hidden;
+    height: 20px;
+}
+
+.usersLikes {
+    background: #7ae9b466;
+    height: 40px;
+    width: 120px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.likesection {
+    background: rgba(17, 17, 17, 0.233);
+    height: 400px;
+}
+
+.liketext {
+    background: rgb(23, 155, 173);
+    width: -moz-fit-content;
+    position: relative;
+    left: 46%;
+    padding: 10px;
+    display: -webkit-inline-box;
+}
+
+.commentForm {
+    background: none;
+}
+
+.availablecommenT {
+    min-height: 500px;
+}
+
+.availablecommenT li:nth-child(1) {
+    /* margin-top: 275px; */
+    margin-bottom: 9%;
+}
+
+.reply {
+    border: 1px solid grey;
+    padding: 5px;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-bottom: 20px
+}
+
+.replymsg>.replybadge {
+    background: #18bbc3;
+    height: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 30px
+}
+
+.replymsg>.replies {
+    display: block;
+    border: 1px solid rgba(128, 128, 128, 0.589);
+    padding: 20px;
+    border-radius: 10px 30px 0px 40px;
+    width: -moz-fit-content;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    color: #3a3939;
+    background: rgba(30, 93, 104, 0.157);
+}
+
+.search {
+    display: -moz-inline-box;
+    display: -webkit-inline-box;
+    display: -o-inline-box;
+    /* background: rgba(128, 128, 128, 0.246);
+     max-width: 350px;
+    height: 50px;*/
+    margin-right: 275px;
+}
+
+.search button {
+    border: none;
+    background: rgba(128, 128, 128, 0.294);
+}
+
+.search button:hover {
+    border: none;
+    background: rgba(34, 73, 109, 0.294);
+}
+
+.search .inputSearch {
+    width: 300px;
+    margin-left: 10px;
+}
+
+.search .searchIcon {
+    color: white;
+}
+
+.comment_row li {
+    background: rgb(246, 246, 246);
+    /* border: 1px solid rgba(238, 130, 238, 0.753); */
+    color: rgb(75, 75, 75);
+    border-bottom: 1px solid violet;
+    margin: 10px;
+    list-style: none;
+    min-height: 45vh;
+}
+
+.btn.btn-default {
+    height: 30px;
+}
+
+.register {
+    left: 45%;
+    position: relative;
+}
+
+.commenttools {
+    display: -webkit-box;
+}
+
+.reactions {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.671);
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.commenttools i {
+    cursor: pointer;
+}
+
+.commentReply {
+    display: none;
+}
+
+.replied {
+    color: #5c5c99;
+}
+
+.showreplyForm {
+    display: -webkit-inline-box;
+    width: 300px;
+}
+
+.searchcontent {
+    display: -moz-groupbox;
+    position: relative;
+    left: 55%;
+    z-index: 1;
+}
+
+.closebtn {
+    display: none
+}
+
+.searchResults {
+    background: #40e0d0b3;
+    height: 200px;
+    z-index: 1000;
+    display: inline-table;
+    position: relative;
+    left: 750px;
+    width: 400px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    border-bottom: 1px solid;
+    margin-top: 10px;
+    margin-left: -30px;
+}
+
+.searchResults p {
+    border-bottom: 1px solid #d6d3c099;
+    background: #033434cc;
+    background: #032c3480;
+    height: 40px;
+    line-height: -moz-block-height;
+}
+
+.article {
+    border: 1px solid white;
+    margin-bottom: 10px;
+    color: white;
+    background: rgba(128, 128, 128, 0.452);
+    transform: translateX(10px);
+    transition: all 2s ease-in-out;
+}
+
+.article h1 {
+    font-size: 20px;
+    background: rgba(51, 51, 51, 0.637);
+    background: rgba(51, 51, 51, 0.13);
+    width: 50%;
+    margin-left: 30%;
+    margin-bottom: 0px;
+    border-top: 1px solid rgba(255, 255, 255, 0.315);
+    border-left: 1px solid rgba(255, 255, 255, 0.315);
+    border-right: 1px solid rgba(255, 255, 255, 0.315);
+}
+
+.article h5 {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.315);
+    border-left: 1px solid rgba(255, 255, 255, 0.315);
+    border-right: 1px solid rgba(255, 255, 255, 0.315);
+    font-size: 16px;
+    background: rgba(51, 51, 51, 0.13);
+    width: 50%;
+    margin-left: 30%;
+    margin-top: 0px;
+}
+
+.article a {
+    color: white;
+}
+
+.article a:hover {
+    color: white;
+}
+
+.article:hover img {
+    opacity: 0.6;
+    transform: translateX(200px);
+    transition: all 2s ease-in-out;
+}
+
+.article:hover .readmore {
+    transform: translateX(-200px);
+    transition: all 2s ease-in-out;
+}
+
+.allImages {
+    width: 50%;
+    margin-left: 30%;
+    transition: all 2s ease-in-out;
+}
+
+.alertmodal.modal.fade.in {
+    top: 120px;
+}
+
+.HomePosts .readmore {
+    /* display: none; */
+    position: relative;
+    z-index: -5;
+    left: 50%;
+    bottom: 150px;
+    transform: translateX(200px);
+    transition: all 2s ease-in-out;
+}
+
+.blog {
+    background: rgb(185, 173, 173);
+    background: rgb(192, 191, 191);
+    height: auto;
+}
+
+.moreArticles {
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+}
+
+.col-md-12.aboutAuthor {
+    background: #8fb6b0;
+    top: 117px;
+    color: #110b0b;
+    left: 0%;
+    border-top: 1px solid aliceblue;
+}
+
+.author h5 {
+    position: relative;
+    color: #fffdfd;
+    left: 25%
+}
+
+.articles {
+    background: rgba(47, 47, 47, 0.445);
+    margin-bottom: -40px;
+}
+
+.post {
+    background: rgb(21, 22, 44);
+}
+
+.post img {
+    width: 600px;
+    height: 200px;
+}
+
+.post h5 {
+    background: rgb(41, 41, 41);
+    width: auto;
+    height: 30px;
+    margin-bottom: 0;
+}
+
+h4.pull-right {
+    color: white;
+    text-decoration: underline;
+    margin-right: 10px;
+}
+
+.editform {
+    background: #a7b3f04d;
+    color: white
+}
+
+#editForm {
+    display: none
+}
+
+.Formcontent {
+    overflow-x: hidden;
+}
+
+.Formcontent {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+ul {
+    color: black;
+    background: rgb(241, 241, 241)
+}
+
+.footer {
+    background: url('/images/Untitled-1.jpg');
+    background-size: cover;
+    min-height: 400px;
+    padding: 0;
+    margin: 0;
+    margin-top: 0px;
+    width: 100%;
+    color: white;
+    margin-top: 550px;
+}
+
+.author {
+    height: 400px;
+    width: 100%;
+    background: #d5d7dbe6;
+    margin-top: -20px;
+    margin-bottom: -40px;
+}
+
+.img-reponsive {
+    width: -moz-fit-content;
+    height: 350px;
+}
+
+.img-circle {
+    border-radius: 50%;
+    position: absolute;
+    left: 33%;
+    height: 250px;
+    border: 5px solid aliceblue;
+}
+
+.author h4 {
+    color: #202323;
+}
+
+.morefooter {
+    background: rgb(43, 43, 43);
+    height: 100px;
+    width: 100%;
+    padding: 80px;
+}
+
+.about {
+    background: rgb(243, 243, 243);
+    color: rgb(53, 53, 53);
+}
+
+comments {
+    background: rgb(17, 17, 17);
+    height: 500px;
+    padding: 0;
+    margin: 0;
+    width: 100%
+}
+
+#lessons {
+    background: aliceblue;
+    height: 900px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+html {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#form {
+    background: linear-gradient(rgba(11, 65, 65, 0.267) 59%, white);
+    min-height: 500px;
+    box-shadow: 1px 2px 4px black;
+    color: white;
+    width: 400PX;
+}
+
+#account {
+    box-shadow: 1px 1px 2px beige;
+    color: rgb(27, 23, 23);
+}
+
+#login {
+    text-align: center;
+}
+
+body {
+    background: url('/images/IT.jpg');
+    background-size: contain;
+    background-color: black;
+}
+
+.flashmsg {
+    position: relative;
+}

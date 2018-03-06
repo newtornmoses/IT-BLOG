@@ -1,0 +1,60 @@
+.blog h1 {
+    font-size: 64px;
+    color: rgb(24, 24, 54);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: rgb(247, 245, 245);
+}
+
+.blog img {
+    width: 100%;
+    height: 550px;
+}
+
+.blog {
+    background: white
+}
+
+.badge {
+    background: rgb(42, 42, 42);
+    color: white
+}
+
+.moreblog img {
+    width: 80%;
+}
+
+.moreblog h1 {
+    font-size: 19px;
+}
+
+.moreblog {
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(42, 38, 38);
+}
+
+.post {
+    width: auto;
+    height: 300px;
+    float: left;
+    margin-bottom: -10px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.post h1 {
+    background: white;
+    height: 50px;
+    line-height: -22%;
+    margin-bottom: -2px;
+}
+
+.post img {
+    width: 100%;
+    height: 200px;
+}
+
+.comments {
+    min-height: 400px;
+    background: rgb(211, 203, 203);
+}

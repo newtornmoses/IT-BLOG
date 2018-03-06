@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="/css/style2.css">
+<link rel="stylesheet" href="/css/service.css">
+<link rel="stylesheet" href="/css/addarticle.css">
+
+
+<div class="nav">
+
+    <a href="/api/blog" class='btn btn-default'>Home</a>
+    <a href="/api/aboutus" class='btn btn-default'>About Us</a>
+    {{#if user.isAdmin}}
+    <a  class='btn btn-default' id="addarticle">AddArticle</a>
+    
+    {{/if}}
+    {{#if user}}
+    <a  href="/users/logout" class='btn btn-default pull-right'>Logout</a>
+ 
+     {{else}}
+       <a href="/users/signup" class='btn btn-default pull-right'>Sign</a>
+      <a href="/users/login" class='btn btn-default pull-right'>Login</a>
+    {{/if}}
+
+    {{#if user.isAdmin}}
+<h4 class="pull-right">Welcome Admin</h4>
+{{/if}}
+
+{{!-- search --}}
+  <form action="/api/search" id="search" method="POST" class="pull-right">
+        <div class="form-group col-md-4 pull-right search">
+            
+       <input type="text" name="search"  class="form-control pull-right inputSearch" placeholder="search">
+       <button type="submit" class="btn btn-success" >
+            <i class="fa fa-search searchIcon"> Search </i>
+       </button>
+       
+   </div>
+   </form>
+   <div class="searchcontent">
+ <div style="display:none" class="searchResults">
+   </div>
+       <button class="btn btn-danger closebtn">close</button>
+
+   </div>
+  
+           
+
+</div>
+
+
+<section class="brand">
+    <h1> IT LABS</h1>
+    <h4 class="text-center">The information Technology Center of Knowledge</h4>
+       {{#if user}}
+<h6 class="list-group-item pull-right">You are logged in as {{user.username}}</h6>
+
+{{/if}}
+ 
+</section>
+
+
+{{!-- add article from --}}
+
+
+<div class="Formcontent modal fade">
+    <div class="container addArticle">
+        <h3 class="formHead col-md-8 "> ADD NEW ARTICLE</h3>
+        <form   action="/api/addArticle"  method="post" enctype="multipart/form-data" class="col-md-8 col-md-offset-4 addForm">
+            <div class="form-group">
+                <label for="title"> Title</label>
+                
+                <input type="text" name="title"  id="title"  class="form-control" placeholder=" Title goes here">
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label for="description"> Description</label>
+                <input type="text" name="description" id="description"  class="form-control" placeholder=" Description goes here">
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label for="image"> Image</label>
+                <input type="file" name="image"  id="image"  class="form-control" multiple="true" >
+
+  
+            </div>
+
+
+            <br>
+
+            <div class="form-group">
+                <label for="image"> Article Content</label>
+                <textarea name="blog" id="blog" rows="20" class="form-control" placeholder=" Article goes here"></textarea>
+            </div>
+
+
+            <br>
+ <input type="submit" class="btn btn-danger col-md-4 cancle" value="cancle">
+            <button type="submit" class="btn btn-primary col-md-4 button create">Add Article</button>
+           
+            <hr>
+
+        </form>
+    </div>
+</div>
+
+

@@ -1,0 +1,299 @@
+<link rel="stylesheet" href="/css/style2.css">
+<link rel="stylesheet" href="/font/css/font-awesome.min.css">
+
+<div class="container">
+
+
+    {{> success}}
+
+
+    <section class="col-md-12 blog">
+
+        <div class="col-md-12">
+{{#if post.updatedAt}}
+<div class="actualPost">
+            <h4 > Updated on: <i class="updatedDate"> {{post.updatedAt}}</i></h4>
+           {{#if post.createdAt}}
+            <h4 > Created  At: <i class="updatedDate"> {{post.createdAt}}</i></h4>
+            {{/if}}
+            {{/if}}
+            <h1 class="text-center">{{post.title}}</h1>
+
+            <span class="badge"></span>
+            </h4>
+            <img src="{{post.image}}" class="img-responsive">
+
+            <h5 class="text-center">{{post.description}}</h5>
+
+            <p class="text-center">{{post.blog}}</p>
+            {{#if post.creator}}
+            <h4 class="text-center"> Posted by: {{#each post.creator}} {{this.username}} {{/each}}
+            </h4>
+            </div>
+
+            {{/if}} 
+            {{#if user.isAdmin}}
+            <a href="http://" class="btn btn-primary editBtn"> Edit</a>
+
+
+            <form action="/api/blog/delete/{{post._id}}" class=" pull-right" method="GET">
+                <button type="submit" class="btn btn-danger " id="deleteBtn"> Delete</button>
+            </form>
+            {{/if}}
+
+        </div>
+
+
+    </section>
+
+    {{!-- post edit model --}}
+    <section class="col-md-12 modal fade editform" id="editForm">
+
+        <div class="col-md-12">
+
+            <h3 style="color:white" class="formHead col-md-8 "> EDIT ARTICLE</h3>
+            <form method="POST" action="/api/blog/edit/{{post._id}}" enctype="multipart/form-data" class="col-md-8 col-md-offset-4 addForm">
+                <div class="form-group">
+                    <label for="title"> Title</label>
+                    <input type="text" name="title" id="Edittitle" class="form-control" value=" {{post.title}}">
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="description"> Description</label>
+                    <input type="text" name="description" id="Editdescription" class="form-control" value="{{post.description}}">
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <label for="image"> Image</label>
+                    <input type="file" name="image" id="Editimage" class="form-control" value=" {{post.image}}">
+                </div>
+
+
+                <br>
+
+                <div class="form-group">
+                    <label for="image"> Article Content</label>
+                    <textarea name="blog" id="Editblog"  rows="20"  class="form-control">{{post.blog}}</textarea>
+                </div>
+
+
+                <br>
+                <input id="cancleEdit" class="btn btn-danger col-md-4 " value="cancle">
+                <button type="submit" class="btn btn-primary col-md-4 button savePost">SAVE Changes</button>
+
+                <hr>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+</div>
+
+
+
+
+<!-- comments section -->
+
+<section class="col-md-12 comment">
+    <div class="postlikesForm">
+        <form action="/api/postlikes/{{post._id}}" id="postForm" class="likeform" method="post">
+            <h4 class="text-center">Click like to show you love this post</h4>
+            <button class=" btn btn-warning like Postlikebtn ">
+                <i class="fa fa-hand-o-up "> </i>
+            </button>
+
+            <h4 class="text-center liketext">Likes
+                <p class="totalPostLikes"> {{post.likes}}</p>
+            </h4>
+    </div>
+    </form>
+    </div>
+    <h3 style="color:white" class="text-center">
+        <span class="badge" id="commentspan">{{commentcount}} </span> Comments </h3>
+
+    <!-- comment form -->
+
+    {{#if user}}
+    <div class="col-md-12 commentForm">
+
+
+        <div class="col-md-6">
+            {{!-- addcomment form--}}
+            <form class="form-group" method="POST" action="/article/comments/{{post._id}}">
+                <div>
+
+                    <textarea rows="2" name="comment" id="comment" cols="50" class="form-control comment" placeholder="  You are commenting as  {{#if user}}{{user.username}}
+                   
+                {{/if}}
+                
+                 "></textarea>
+                </div>
+                <div>
+
+                    <button type="submit" id="commentBtn" class="btn btn-info btn-block"> submit</button>
+                </div>
+
+            </form>
+            {{else}}
+
+            <h4 style="color:white" class="text-center"> You must be logged in to comment</h4>
+            <div class="register">
+                <a href="/users/login" class="btn btn-success">Login</a> |
+                <a href="/users/signup" class="btn btn-info">SignUp</a>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+
+    <hr> {{!-- view comments --}}
+    <div class="availablecommenT">
+
+        {{#if comment}}
+        <ul class=" comment_row" id="comment_row">
+
+            {{#each comment }}
+            <li class="commentli">
+
+
+                <h5 id="comment_username" class="badge pull-left">{{this.creator.username}}</h5>
+                <br>
+                <h4 id="comment_comment">{{this.comment}}</h4>
+                <p class="titme" id="comment_time"> Commented:
+                    <i class="fa fa-clock-o time"> {{this.createdAt}}</i>
+                </p>
+
+
+
+                {{!-- // comment tools --}}
+
+                <div class="commenttools">
+                    <form action="/article/commentLikes/{{this._id}}" class="commentLikesForm" method="post">
+
+                        <i class="fa fa-hand-o-right">
+                            <button class="btn btn-default likeBtn">Like</button>
+                        </i>|
+                    </form>
+
+                    <i class="fa fa-mail-reply reply" id="reply">Reply</i> | \
+                    <p class="totalLikes">{{this.likes}} </p>- people like this comment \ {{!-- reply form --}}
+                    <div class="replyform">
+
+                        <form action="/article/commentreply/{{this._id}}" data-commentid="{{this._id}}" class="col-md-4 commentReply" method="POST">
+                            <div class="form-group formInput">
+
+                                <textarea type="text" name="reply" class="form-control replyText" placeholder="reply to {{this.creator.username}}'s comment'"></textarea>
+
+
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-success btnreply">reply</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="userNames">
+                        {{#if likesUsers}} {{#each likesUsers}}
+                        <div class="usersLikes">
+
+                            <a href="http://">{{this.username}}</a>
+                        </div>
+
+                        {{/each}} {{/if}}
+                    </div>
+                </div>
+               
+
+                {{!-- ajax call --}}
+
+                <div class="dynamicviews">
+                    {{!-- views --}}
+                </div>
+
+
+                {{!-- replies --}} {{#if this.reply}} {{#each this.reply}} {{!--
+                <li class="list-group-item"> --}}
+
+                    <div class="replymsg">
+                        <span class="replybadge">{{this.creator.username}}</span>
+
+                        <i class="replies">{{this.reply}}
+                            <p class="repliedTime"> Replied:
+                                <i class="fa fa-clock-o time replied"> {{this.createdat}}</i>
+                            </p>
+
+
+                        </i>
+
+                    </div>
+
+
+
+                    {{!-- </li> --}} {{/each}} {{/if}}
+
+
+
+            </li>
+
+
+
+            {{/each}}
+
+
+
+        </ul>
+    </div>
+    {{else}}
+    <div>
+        <a class="text-center btn btn-danger">oops... No comments at the moment !!!</a>
+    </div>
+    {{/if}} {{!-- ///{{replies.comment}} --}}
+
+
+
+ {{!-- alert --}}
+                <div class="alertmodal modal fade">
+                    <div class=" col-md-6 col-md-offset-4 panel panel-danger">
+                        <div class="panel-heading">
+                            <h4 class="text-danger text-center">
+                                <i class="fa fa-lock"></i> CAUTION !!!!</h4>
+                        </div>
+                        <div class="panel-body">
+                            <h3 class="text-center text-info">
+                                <i class="fa fa-user-circle"></i> Please login to comment & like</h3>
+                        </div>
+                        <div class="panel-footer">
+                            <a id="cancleModel" class='btn btn-info '>Cancle</a>
+                            <a href="/users/signup" class='btn btn-primary pull-right'>Sign</a>
+
+                            <a href="/users/login" class='btn btn-danger pull-right'>Login</a>
+                        </div>
+                    </div>
+                </div>
+
+</section>
+
+<!-- Recent articles -->
+<section class="moreArticles">
+    <div class="articles">
+        <h4 class="text-center">More articles</h4>
+    </div>
+    {{#each randomPosts}}
+    <div class="col-md-4  post">
+        <h5 class="text-center">{{this.title}}</h5>
+
+        <img src="{{this.image}}" class="img-responsive" alt="">
+
+        <a class="btn btn-success" href="/api/blog/{{this._id}}">view</a>
+
+
+    </div>
+    {{/each}}
+</section>
+
+{{!-- scripts --}} {{>scripts}}

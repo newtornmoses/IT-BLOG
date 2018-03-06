@@ -1,0 +1,28 @@
+<div id="wrapper">
+    <div class="container" id="form">
+        <div class="col-md-12">
+            <h2 id='login'> LOGIN </h2>
+            <form class="form-group" method="POST" action="/users/login">
+
+                <div class="form-group" id="forms">
+                    <label for="email">Email:</label>
+                    <input type="text" name="email"  autofocus="true" class="form-control" placeholder="enter your email" required>
+                </div>
+
+                <div class="form-group" id="forms">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" class="form-control" placeholder="enter your password" required>
+                </div>
+                <div class="form-group" id="forms">
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+
+
+                </div>
+            </form>
+
+            <p id="account">Already have an account? ,please 
+               <a class="btn btn-info" href="/users/signup">signup</a>  here</p>
+
+        </div>
+    </div>
+</div>

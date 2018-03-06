@@ -1,0 +1,30 @@
+.addArticle {
+    color: white;
+    padding: 40px;
+}
+
+.addForm {
+    background: -moz-linear-gradient(rgba(110, 110, 110, 0.568), rgba(121, 121, 121, 0.3));
+    margin-left: 90px;
+    border-left: 1px solid rgba(255, 255, 255, 0.726);
+    border-right: 1px solid rgba(255, 255, 255, 0.664);
+}
+
+.formHead {
+    background: rgb(41, 41, 41);
+    margin-bottom: 0px;
+    margin-left: 90px;
+}
+
+.button {
+    position: relative;
+    left: 25%;
+}
+
+.Formcontent:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    min-height: 130vh;
+    background: rgba(36, 35, 117, 0.52);
+}

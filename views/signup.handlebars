@@ -1,0 +1,47 @@
+<div id="wrapper">
+    <div class="container" id="form">
+        {{#if danger}}
+              <h5 class="alert alert-danger text-center">
+                  {{danger}}
+               
+              </h5>
+            {{/if}}
+
+            {{#if error}}
+                {{#each error}}
+              <h5 class="alert alert-danger text-center">
+                    {{this}}
+              </h5>
+              {{/each}}
+            {{/if}}
+        <div class="col-md-12">
+            
+            <h2 id='login'> SIGN UP </h2>
+            <form  method="POST" action="/users/signup">
+                <div class="form-group" id="forms">
+                    <label for="name">username:</label>
+                    <input type="text" name="username" autofocus="true" class="form-control" placeholder="enter your name" value="{{session.username}}"  required>
+                </div>
+
+
+                <div class="form-group" id="forms">
+                    <label for="email">Email:</label>
+                    <input type="text"  name="email" autofocus="true" class="form-control" placeholder="enter your email" value="{{session.email}}" required>
+                </div>
+
+                <div class="form-group" id="forms">
+                    <label for="password">Password:</label>
+                    <input type="password"  name="password" class="form-control" placeholder="enter your password" value="{{session.password}}" required>
+                </div>
+                <div class="form-group" id="forms">
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+
+
+                </div>
+            </form>
+
+            <p id="account">Already have an account? ,please 
+               <a class="btn btn-info" href="/users/login">login</a>  here</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+<section class="footer">
+    <div class="contactForm">
+        <h3 class="text-center">Send us a Message</h3>
+        <form action="/api/contactus" method="post" class="col-md-8 col-md-offset-2">
+            <div class="form-group col-md-8">
+                <label for="name">Name: </label>
+                <input type="text" name="name" class="form-control" placeholder="Your name here">
+            </div>
+
+            <div class="form-group col-md-8">
+                <label for="name">Email: </label>
+                <input type="text" name="email" class="form-control" placeholder="Your email here">
+            </div>
+
+
+
+
+
+            <div class="form-group col-md-8">
+                <label for="name">Email: </label>
+                <textarea type="text" name="message" class="form-control" placeholder="Your message here"></textarea>
+            </div>
+
+            <div class="form-group col-md-8">
+                <button class="btn btn-info" type="submit">send</button>
+            </div>
+
+        </form>
+    </div>
+
+
+
+</section>
+
+<section class="author">
+
+    <div class="col-md-4">
+        <h4 class="text-center"> Newtorn Moses AUTHOR</h4>
+        <div class="panel  panel-default">
+            <div class="panel-heading"> Profession: IT Expert</div>
+            <div class="panel-body">Others: Blogger</div>
+            <div class="panel-footer">Nationality: Indian</div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel-footer text-center">Founder/C.E.O. IT LABS</div>
+        <div class="panel-body">
+
+         
+               {{#each authorpic}}
+{{!-- <img src="{{this.image}}" alt="authorpic" > --}}
+
+
+            <img src="{{this.image}}" width="200px" class=" img-circle img-responsive" alt="">
+{{/each}}
+
+
+        </div>
+
+
+
+
+        </div>
+        </div>
+
+           {{#if user.isAdmin}}
+
+        {{!-- upload-Image --}}
+        
+        <form action="/api/AuthorImageupload" method="post" class="authorImage" enctype="multipart/form-data">
+            <input type="file" name="image" id="authorimage" multiple="true">
+            <button type="submit" class="btn btn-default">upload</button>
+        </form>
+{{/if}}
+        <div class="col-md-4">
+            <h4 class="text-center"> Social Networks</h4>
+            <ul class="list-group">
+                <li class="list-group-item">Twitter -- @Author </li>
+                <li class="list-group-item">facebook -- Author.facebook.com </li>
+                <li class="list-group-item">email -- Authorgmail.com </li>
+
+
+            </ul>
+        </div>
+        <hr>
+
+        <div class="col-md-12 aboutAuthor">
+            <h5> I am an I.T Expert with 8yrs experience and i love sharing my knowledge to others, for the sake of educating
+                the world</h5>
+            <h5> Teaching the world Information Technology is my passion...and i love I.T to the fullest </h5>
+
+
+        </div>
+</section>
+
+<section class="morefooter">
+    <div class="copy">
+        <h4 class="text-center copyright" style="color:white"> &copy Copyright IT-LABS All rights reserved 2018</h4>
+        <h4 class="pull-right"> Developed by Newtorn Moses</h4>
+    </div>
+</section>
+

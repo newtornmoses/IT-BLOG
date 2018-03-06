@@ -1,0 +1,38 @@
+<div class="Formcontent">
+    <div class="container addArticle">
+        <h3 class="formHead col-md-8 "> ADD NEW ARTICLE</h3>
+        <form (submit)="addnewArticle()" class="form col-md-8 col-md-offset-4 addForm">
+            <div class="form-group">
+                <label for="title"> Title</label>
+                <input type="text" name="title" [(ngModel)]="title" class="form-control" placeholder=" Title goes here">
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label for="description"> Description</label>
+                <input type="text" name="description" [(ngModel)]="description" class="form-control" placeholder=" Description goes here">
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label for="image"> Image</label>
+                <input type="text" name="image" [(ngModel)]="image" class="form-control" placeholder=" ImageUrl goes here">
+            </div>
+
+
+            <br>
+
+            <div class="form-group">
+                <label for="image"> Article Content</label>
+                <textarea name="blog" [(ngModel)]="blog" class="form-control" placeholder=" Article goes here"></textarea>
+            </div>
+
+
+            <br>
+
+            <input type="submit" class="btn btn-primary col-md-6 button" value="Add Article">
+
+        </form>
+    </div>
+</div>

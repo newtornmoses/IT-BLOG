@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    box-sizing: border-box;
+}
+
+.blog h1 {
+    font-size: 29px;
+    color: rgb(65, 65, 253)
+}
+
+.allImages {
+    width: 50%;
+    margin-left: 30%;
+}
+
+.blog {
+    background: rgb(185, 173, 173);
+    height: auto;
+}
+
+#images {
+    background: currentColor;
+    height: 500px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+ul {
+    color: black;
+    background: royalblue
+}
+
+#footer {
+    background: rgb(36, 64, 66);
+    height: 200px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#comments {
+    background: rgb(17, 17, 17);
+    height: 500px;
+    padding: 0;
+    margin: 0;
+    width: 100%
+}
+
+#lessons {
+    background: aliceblue;
+    height: 900px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+html {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#form {
+    background: linear-gradient(rgba(11, 65, 65, 0.267) 59%, white);
+    height: 500px;
+    box-shadow: 1px 2px 4px black;
+    color: white;
+    width: 400PX;
+}
+
+#account {
+    box-shadow: 1px 1px 2px beige;
+    color: rgb(27, 23, 23);
+}
+
+#login {
+    text-align: center;
+}
+
+#forms {
+    max-margin-left: 100px;
+}
+
+body {
+    background: url('assets/IT.jpg');
+    background-color: black;
+}
+
+.flashmsg {
+    position: relative;
+}
